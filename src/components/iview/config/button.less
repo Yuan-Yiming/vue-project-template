@@ -1,0 +1,137 @@
+@import './common.less';
+
+// ***** button variable *****
+// 按钮样式
+@btn-color       : #fff;
+@btn-height      : @form-height;
+@btn-border      : 1px solid rgba(53, 81, 89, 1);
+@primary-color   : rgba(73, 170, 25, 1);
+@secondary-color : rgba(16, 30, 50, 0.4);
+@danger-color    : rgba(243, 115, 112, 1);
+@disabled-color  : #01122a;
+
+// ***** button mixin *****
+.btn-text {
+  font-size: 16px;
+  color    : #fff;
+}
+
+.btn-height {
+  line-height: calc(@btn-height - 2px);
+  height     : @btn-height;
+}
+
+// 前台按钮
+.btn-primary-f {
+  background: linear-gradient(0deg,
+      rgba(55, 137, 81, 1),
+      rgba(85, 213, 125, 1));
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    background: linear-gradient(0deg,
+        rgba(75, 189, 111, 1),
+        rgba(95, 239, 141, 1));
+  }
+
+  &:active {
+    background: linear-gradient(180deg,
+        rgba(55, 137, 81, 1),
+        rgba(85, 213, 125, 1));
+  }
+}
+
+.btn-secondary-f {
+  color: @text-color;
+  background: linear-gradient(0deg,
+      rgba(11, 28, 51, 1),
+      rgba(13, 33, 59, 1));
+  border: 1px solid rgba(51, 81, 95, 1);
+
+  &:hover {
+    color : @text-color-active;
+    border: 1px solid @text-color-active;
+  }
+
+  &:active {
+    color : darken(@text-color-active, 10%);
+    border: 1px solid darken(@text-color-active, 10%);
+  }
+
+}
+
+.btn-disabled-f {
+  cursor    : not-allowed;
+  color     : fade(#fff, 20%);
+  background: @disabled-color;
+  border    : 1px solid #345160;
+}
+
+.btn-danger-f {
+  background: linear-gradient(0deg,
+      rgba(211, 65, 65, 1),
+      rgba(243, 74, 74, 1));
+
+  &:hover {
+    background: linear-gradient(0deg,
+        rgba(249, 77, 77, 1),
+        rgba(255, 100, 100, 1));
+  }
+
+  &:active {
+    background: linear-gradient(180deg,
+        rgba(211, 65, 65, 1),
+        rgba(243, 74, 74, 1));
+  }
+}
+
+// 后台按钮
+.btn-primary-b {
+  background: @primary-color;
+
+  &:hover {
+    background: lighten(@primary-color, 10%);
+  }
+
+  &:active {
+    background: darken(@primary-color, 10%);
+  }
+
+}
+
+.btn-secondary-b {
+  background: @secondary-color;
+  border    : @btn-border;
+  color     : #fff;
+
+  &:hover {
+    border    : @btn-border;
+    color     : #fff;
+    background: lighten(@secondary-color, 10%);
+  }
+
+  &:active {
+    border    : @btn-border;
+    color     : #fff;
+    background: darken(@secondary-color, 10%);
+  }
+
+}
+
+.btn-disabled-b {
+  color     : fade(#fff, 20%);
+  background: @disabled-color;
+  border    : 1px solid #345160;
+}
+
+.btn-danger-b {
+  background: @danger-color;
+
+  &:hover {
+    background: lighten(@danger-color, 10%);
+  }
+
+  &:active {
+    background: darken(@danger-color, 10%);
+  }
+}

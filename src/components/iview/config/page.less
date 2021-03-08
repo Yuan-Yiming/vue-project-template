@@ -1,0 +1,25 @@
+@import './common';
+@import './input.less';
+// page variable
+@page-font-size         : 14px;
+@page-text-color        : @text-color;
+@page-text-color-active : @bg-active;
+@page-size              : 32px;
+
+// page 按钮样式（边框&背景）
+.page-box-view {
+  .input-view();
+}
+
+.page-box-view-b {
+  .input-view-b();
+}
+
+.page-box-view-disabled {
+  .input-view-disabled()
+}
+
+.page-box-view-active {
+  background: @bg-focus;
+  border    : @border-active;
+}

@@ -1,0 +1,45 @@
+@import './common';
+
+/**
+* 输入框的下拉框
+* 说明：select、cascader、datepicker、timepicker、page的下拉框样式
+*/
+
+// 下拉框外形样式（select、datepicker、timepicker、cascader）
+@input-drawdown-border   : 1px solid @text-color-sub;
+@input-drawdown-bg       : #345160;
+@input-drawdown-border-b : 1px solid @bg-active;
+@input-drawdown-bg-b     : #13283d;
+
+// 下拉框内容选中项（select、datepicker、timepicker、cascader）
+@input-drawdown-item-text          : @text-color; // 下拉文本-颜色
+@input-drawdown-item-text-hover    : @text-color-active; // 下拉文本-颜色-悬浮
+@input-drawdown-item-text-active   : @text-color-active; // 下拉文本-颜色-选中
+@input-drawdown-item-text-disabled : @text-color-disabled; // 下拉文本-颜色-选中
+@input-drawdown-item-bg-hover      : transparent; // 下拉选型悬浮状态背景
+@input-drawdown-item-bg-active     : transparent; // 下拉选项选中状态背景
+@input-drawdown-inner-border       : 1px solid fade(#fff, 15%); // 下拉框内部边框（浅色）
+@input-drawdown-inner-border-b     : 1px solid fade(#fff, 15%); // 下拉框内部边框（浅色）
+
+// 日期、时间时间选择器下拉框（datepicker、timepicker）
+@datepicker-weekday-color      : #fff;
+@datepicker-cell-color         : fade(#fff, 65%); // 普通cell文字颜色
+@datepicker-cell-not-this-month: fade(#fff, 30%); // 上一月或下一月cell文字颜色
+@datepicker-cell-hover-bg      : fade(@bg-active , 20%); // 悬浮背景色
+@datepicker-cell-selected-bg   : @bg-active; // 选中时背景色
+@datepicker-cell-focus-bg      : @bg-disabled; // 选中后背景色
+@datepicker-cell-disabled-bg   : @bg-disabled; // 禁用背景色
+@datepicker-active-text        : @bg-active; // 激活文本颜色
+@datepicker-hover-text         : #fff;
+
+
+// 输入框下拉样式（边框&背景）
+.input-drawdown-view {
+  border    : @input-drawdown-border;
+  background: @input-drawdown-bg;
+}
+
+.input-drawdown-view-b {
+  border    : @input-drawdown-border-b;
+  background: @input-drawdown-bg-b;
+}

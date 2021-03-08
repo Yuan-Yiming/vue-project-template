@@ -1,0 +1,190 @@
+/**
+* 0.通用变量
+* 说明：基础变量只在组件变量中引用，未在组件中使用
+*/
+// 文本样式
+@base-font-size     : 16px; // 文本大小
+@text-color         : #c9e5e0; // 文本颜色
+@text-color-light   : #fff; // 明亮颜色
+@text-color-sub     : #75a9a0; // 次要文本颜色
+@text-color-active  : #4cbd70; // 激活文本颜色
+@text-color-disabled: fade(@text-color, 20%); // 禁用文本颜色
+// 背景样式
+@bg-color           : #13283d;
+@bg-focus           : #13283d;
+@bg-active          : #49aa19;
+@bg-disabled        : #01122a; // 深蓝色，disabled、selected
+// 边框样式
+@border-active      : 1px solid #49aa19;
+// 表单通用默认样式
+@form-height        : 36px;
+
+
+// ** 自定义滚动条 **
+
+// ::-webkit-scrollbar — 整个滚动条.
+// ::-webkit-scrollbar-button — 滚动条上的按钮 (上下箭头).
+// ::-webkit-scrollbar-thumb — 滚动条上的滚动滑块.
+// ::-webkit-scrollbar-track — 滚动条轨道.
+// ::-webkit-scrollbar-track-piece — 滚动条没有滑块的轨道部分.
+// ::-webkit-scrollbar-corner — 当同时有垂直滚动条和水平滚动条时交汇的部分.
+// ::-webkit-resizer — 某些元素的corner部分的部分样式(例:textarea的可拖动按钮).
+
+// #1 【前台滚动】
+// 前台纵向滚动条(常用，默认y轴)
+.show-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width        : 6px;
+    height       : 6px;
+    background   : rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius      : 4px;
+    // background-color: @lightGreen;
+    background         : rgba(117, 169, 160, 1);
+  }
+}
+
+// 前台横向滚动条
+.show-scroll-x {
+  overflow-y: hidden;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    width        : 6px;
+    height       : 6px;
+    background   : rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background   : rgba(117, 169, 160, 1);
+  }
+}
+
+// 前台横向纵向滚动条
+.show-scroll-xy {
+  overflow-y: auto;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    width        : 6px;
+    height       : 6px;
+    background   : rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background   : rgba(117, 169, 160, 1);
+  }
+}
+
+// #2 【前台表格滚动】
+// 滚动条公共样式
+.show-scroll-table-common {
+
+  // 滚动条轨道
+  &::-webkit-scrollbar {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  // 滚动条滑块
+  &::-webkit-scrollbar-thumb {
+    background: rgba(117, 169, 160, 1);
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+// 前台表格滚动条xy
+.show-scroll-table-xy {
+  overflow-y: auto;
+  overflow-x: auto;
+  .show-scroll-table-common()
+}
+
+// 前台表格滚动条x
+.show-scroll-table-x {
+  overflow-y: hidden;
+  overflow-x: auto;
+  .show-scroll-table-common()
+}
+
+// 前台表格滚动条xy
+.show-scroll-table-y {
+  overflow-y: auto;
+  overflow-x: hidden;
+  .show-scroll-table-common()
+}
+
+// #3【后台滚动】
+// 后台纵向横向滚动条
+.admin-scroll-mini {
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width        : 6px;
+    height       : 6px;
+    background   : rgba(16, 30, 50, 1);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background   : #345160;
+  }
+}
+
+// #4【后台表格滚动】
+// 滚动条公共样式
+.admin-scroll-table-common {
+  &::-webkit-scrollbar {
+    border    : 1px solid #345160;
+    padding   : 3px;
+    background: #13283d;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: #13283d;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #345160;
+  }
+
+  &::-webkit-scrollbar-button {}
+}
+
+// 后台x，y轴方向出现滚动
+.admin-scroll-table-xy {
+  overflow-y: auto;
+  overflow-x: auto;
+
+  .admin-scroll-table-common();
+}
+
+// 后台横向横向滚动条
+.admin-scroll-table-x {
+  overflow-y: hidden;
+  overflow-x: auto;
+
+  .admin-scroll-table-common();
+}
+
+// 后台纵向向横向滚动条
+.admin-scroll-table-y {
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .admin-scroll-table-common();
+}
